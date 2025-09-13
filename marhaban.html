@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahalul Qiyam - Marhaban Ya Nurul Aini</title>
+    <!---->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #0d4d44; /* Warna hijau tua yang sejuk */
+        --secondary-color: #f8f9fa;
+        --text-color: #333;
+        --accent-color: #e0b873; /* Warna emas untuk aksen */
+        --arabic-font: "Amiri", serif;
+        --latin-font: "Roboto", sans-serif;
+      }
+
+      body {
+        font-family: var(--latin-font);
+        margin: 0;
+        padding: 0;
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+        line-height: 1.8;
+        transition: background-color 0.3s;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        padding: 50px 20px;
+        background: linear-gradient(135deg, var(--primary-color), #1b6d5f);
+        color: white;
+        border-bottom-left-radius: 20% 15%;
+        border-bottom-right-radius: 20% 15%;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      header h1 {
+        font-family: var(--arabic-font);
+        font-size: 3em;
+        margin: 0;
+        font-weight: 700;
+      }
+
+      header p {
+        font-size: 1.2em;
+        opacity: 0.9;
+      }
+
+      .settings {
+        text-align: center;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .settings label {
+        font-weight: 500;
+        color: var(--primary-color);
+      }
+
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      input:checked + .slider {
+        background-color: var(--primary-color);
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      main {
+        background-color: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 1.8em;
+        margin-bottom: 25px;
+        color: var(--primary-color);
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background-color: var(--accent-color);
+        border-radius: 2px;
+      }
+
+      .verse {
+        margin-bottom: 2.5em;
+        padding-bottom: 1.5em;
+        border-bottom: 1px solid #eee;
+      }
+
+      .verse:last-child {
+        border-bottom: none;
+      }
+
+      .arabic {
+        font-family: var(--arabic-font);
+        font-size: 2.3em;
+        text-align: right;
+        direction: rtl;
+        margin: 0;
+        line-height: 1.7;
+      }
+
+      .latin {
+        font-style: italic;
+        color: #555;
+        margin-top: 15px;
+        font-size: 1.1em;
+      }
+
+      .translation {
+        color: #777;
+        margin-top: 10px;
+        padding-left: 10px;
+        border-left: 3px solid var(--accent-color);
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        font-size: 0.9em;
+        color: #888;
+      }
+
+      footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>مَحَلُّ الْقِيَامِ</h1>
+      <p>Marhaban Ya Nurul 'Aini</p>
+    </header>
+
+    <div class="container">
+      <div class="settings">
+        <label for="toggleView">Teks Arab Saja</label>
+        <label class="toggle-switch">
+          <input type="checkbox" id="toggleView" />
+          <span class="slider"></span>
+        </label>
+        <label for="toggleView">Teks Lengkap</label>
+      </div>
+
+      <main id="lyrics-container">
+        <h2 class="section-title">Bagian Awal: Yâ Nabî Salâm 'Alaika</h2>
+
+        <div class="verse">
+          <p class="arabic">
+            اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِهِ وَسَلَّمْ
+          </p>
+          <p class="latin showable">
+            Allâhumma shalli alâ Muhammadin wa 'alâ âlihi wa sallim.
+          </p>
+          <p class="translation showable">
+            "Ya Allah, limpahkanlah rahmat dan keselamatan kepada Nabi Muhammad
+            dan keluarganya."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            يَا نَبِي سَلَامٌ عَلَيْكَ يَا رَسُولُ سَلَامٌ عَلَيْكَ
+          </p>
+          <p class="latin showable">
+            Yâ nabî salâm 'alaika, Yâ rasûl salâm 'alaika
+          </p>
+          <p class="translation showable">
+            "Wahai Nabi, salam sejahtera untukmu, wahai Rasul salam sejahtera
+            untukmu."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            يَا حَبِيْبُ سَلَامٌ عَلَيْكَ صَلَوَاتُ اللَّهُ عَلَيْكَ
+          </p>
+          <p class="latin showable">
+            Yâ habib salâm 'alaika, shalawâtullâh 'alaika
+          </p>
+          <p class="translation showable">
+            "Wahai kekasih, salam sejahtera untukmu, semoga shalawat (rahmat)
+            Allah tercurah kepadamu."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            أَشْرَقَ الْبَدْرُ عَلَيْنَا فَاخْتَفَتْ مِنْهُ الْبُدُورُ
+          </p>
+          <p class="latin showable">
+            Asyraqal badru 'alainâ, fakhtafat minhul budûru
+          </p>
+          <p class="translation showable">
+            "Bulan purnama telah terbit menyinari kami, cahayanya mengalahkan
+            cahaya bulan-bulan lainnya."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            مِثْلَ حُسْنِكْ مَا رَأَيْنَا قَطُّ يَا وَجْهَ السُّرُورِ
+          </p>
+          <p class="latin showable">
+            Mitsla husnik mâ ra-ainâ, qaththu ya wajhas-surüri
+          </p>
+          <p class="translation showable">
+            "Belum pernah kami melihat keindahan sepertimu sama sekali, wahai
+            wajah yang penuh kegembiraan."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            أَنْتَ شَمْسٌ أَنْتَ بَدْرٌ أَنْتَ نُورٌ فَوْقَ نُوْرٍ
+          </p>
+          <p class="latin showable">
+            Anta syamsun anta badrun, anta nûrun fauqa nûrin
+          </p>
+          <p class="translation showable">
+            "Engkau adalah matahari, engkau adalah bulan purnama, engkau adalah
+            cahaya di atas segala cahaya."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            أَنْتَ إِكْسِيْرٌ وَغَالِي أَنْتَ مِصْبَاحُ الصُّدُورِ
+          </p>
+          <p class="latin showable">
+            Anta iksîrun wa ghâlî, anta mishbahush-shudûri
+          </p>
+          <p class="translation showable">
+            "Engkau adalah bagaikan emas murni yang mahal, engkaulah pelita hati
+            sanubari."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            يَا حَبِيْبِي يَا مُحَمَّدٌ يَا عَرُوسَ الْخَافِقَيْنِ
+          </p>
+          <p class="latin showable">
+            Yâ habîbî ya Muhammad, yâ 'arûsal-khâfiqaini
+          </p>
+          <p class="translation showable">
+            "Wahai kekasihku, wahai Muhammad, wahai mempelai belahan dunia
+            (timur dan barat)."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            يَا إِمَامَ الْقِبْلَتَيْنِ يَا مُؤَيَّدٌ يَا مُمَجَّدْ
+          </p>
+          <p class="latin showable">
+            Yâ mu-ayyad yâ mumajjad, yâ imâmal qiblataini
+          </p>
+          <p class="translation showable">
+            "Wahai yang dikuatkan (dengan wahyu), wahai yang diagungkan, wahai
+            imam dua kiblat."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            مَنْ رَأَى وَجْهَكَ يَسْعَدُ يَا كَرِيمَ الْوَالِدَيْنِ
+          </p>
+          <p class="latin showable">
+            Man ra- wajhaka yas'ad, yâ karîmal walidaini
+          </p>
+          <p class="translation showable">
+            "Siapapun yang memandang wajahmu akan berbahagia, wahai yang mulia
+            kedua orang tuanya."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            حَوْضُكَ الصَّافِي الْمُبَرَّدُ وِرْدُنَا يَوْمَ النُّشُورِ
+          </p>
+          <p class="latin showable">
+            Haudlukash-shâfil-mubarrad, wirdunâ yauman-nusyûri
+          </p>
+          <p class="translation showable">
+            "Telagamu yang jernih dan sejuk adalah sumber minuman kami kelak di
+            hari kiamat."
+          </p>
+        </div>
+
+        <h2 class="section-title">Bagian Tengah: Marhaban Yâ Nûral 'Aini</h2>
+
+        <div class="verse">
+          <p class="arabic">
+            مَرْحَبًا يَا نُورَ الْعَيْنِ مَرْحَبًا جَدَّ الْحُسَيْنِ
+          </p>
+          <p class="latin showable">
+            Marhaban yâ nûral 'aini, marhaban jaddal Husaini
+          </p>
+          <p class="translation showable">
+            "Selamat datang wahai cahaya mataku, selamat datang wahai kakek dari
+            Hasan dan Husain."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            مَرْحَبًا أَهْلًا وَسَهْلًا مَرْحَبًا يَا خَيْرَ دَاعِ
+          </p>
+          <p class="latin showable">
+            Marhaban ahlan wa sahlan, marhaban yâ khaira dâ'î
+          </p>
+          <p class="translation showable">
+            "Selamat datang, ahlan wa sahlan, selamat datang wahai sebaik-baik
+            penyeru (ke jalan Allah)."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">يَا رَسُولَ اللَّهِ أَهْلًا بِكَ إِنَّا نَسْعَدُ</p>
+          <p class="latin showable">Yâ Rasûlallâhi ahlan, bika innâ nas'adu</p>
+          <p class="translation showable">
+            "Wahai Rasulullah, selamat datang! Sungguh dengan kehadiranmu kami
+            menjadi bahagia."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            وَبِجَاهِهُ يَا الهِيْ جُدْ وَبَلِّغْ كُلَّ مَقْصَدْ
+          </p>
+          <p class="latin showable">
+            Wa bijahih yâ ilâhî, jud wa balligh kulla maqshad
+          </p>
+          <p class="translation showable">
+            "Dan dengan kedudukannya yang mulia di sisi-Mu ya Tuhanku, berilah
+            kami karunia dan sampaikanlah kami pada setiap tujuan."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            وَاهْدِنَا نَهْجَ سَبِيْلِهُ كَيْ بِهِ نُسْعَدْ وَنُرْشَدْ
+          </p>
+          <p class="latin showable">
+            Wahdinâ nahja sabîlih, kai bihi nus'ad wa nursyad
+          </p>
+          <p class="translation showable">
+            "Dan tunjukilah kami jalan yang ia tempuh, agar dengannya kami
+            bahagia dan mendapat petunjuk."
+          </p>
+        </div>
+
+        <h2 class="section-title">Bagian Akhir: Shalawat dan Doa</h2>
+
+        <div class="verse">
+          <p class="arabic">صَلَّى اللهُ عَلَى مُحَمَّدٌ مَرْحَبًا</p>
+          <p class="latin showable">Shallallahu 'alâ Muhammad, marhaban</p>
+          <p class="translation showable">
+            "Semoga Allah melimpahkan rahmat kepada Nabi Muhammad, selamat
+            datang."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمْ مَرْحَبًا</p>
+          <p class="latin showable">Shallallahu 'alaihi wa sallam, marhaban</p>
+          <p class="translation showable">
+            "Semoga Allah melimpahkan rahmat dan keselamatan kepadanya, selamat
+            datang."
+          </p>
+        </div>
+
+        <div class="verse">
+          <p class="arabic">
+            رَبِّ فَاغْفِرْ لِي ذُنُوبِي بِبَرْكَةِ الْهَادِي مُحَمَّدٌ
+          </p>
+          <p class="latin showable">
+            Rabbi faghfirlî dzunûbî, bibarkatil hâdî Muhammad
+          </p>
+          <p class="translation showable">
+            "Ya Tuhanku, ampunilah dosa-dosaku, dengan keberkahan sang pemberi
+            petunjuk, Nabi Muhammad."
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <p>
+        Dibuat oleh Muhammad Imron &copy; <span id="year"></span> |
+        <a
+          href="https://aazeenkirani.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          >aazeenkirani.com</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      // Set a default state for the toggle
+      const toggle = document.getElementById("toggleView");
+      toggle.checked = true; // Start with full view
+
+      // Function to toggle text visibility
+      function toggleTextView() {
+        const isChecked = toggle.checked;
+        const showableElements = document.querySelectorAll(".showable");
+
+        showableElements.forEach((el) => {
+          el.classList.toggle("hidden", !isChecked);
+        });
+      }
+
+      // Add event listener to the toggle switch
+      toggle.addEventListener("change", toggleTextView);
+
+      // Set the current year in the footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Initial call to set the correct view on page load
+      toggleTextView();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 20px;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 2.5em;
+  color: #2c3e50;
+  margin-bottom: 0;
+}
+
+.card {
+  background-color: #f9f9f9;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  border-left: 5px solid #b39a7b; /* Nuansa emas islami */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  color: #b39a7b;
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+ul li strong {
+  color: #333;
+}
+
+.interactive-buttons {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn {
+  text-decoration: none;
+  color: #b39a7b;
+  border: 2px solid #b39a7b;
+  padding: 12px 25px;
+  border-radius: 50px;
+  margin: 0 10px;
+  font-weight: bold;
+  background-color: transparent;
+  transition: all 0.4s ease;
+}
+
+.btn:hover {
+  background-color: #b39a7b;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(179, 154, 123, 0.4);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #777;
+}

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biografi Rasulullah ﷺ</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /*
+         * =============================================
+         * Variabel CSS & Gaya Dasar
+         * =============================================
+         */
+      :root {
+        --primary-color: #2c5f2d; /* Hijau Tua */
+        --secondary-color: #b3a374; /* Emas/Krem */
+        --background-light: #f8f9fa; /* Latar Belakang Utama */
+        --background-card: #ffffff; /* Latar Belakang Kartu */
+        --text-dark: #343a40; /* Teks Utama */
+        --text-light: #6c757d; /* Teks Sekunder */
+        --border-color: #dee2e6; /* Warna Border */
+
+        --font-heading: "Lora", serif;
+        --font-body: "Poppins", sans-serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--background-light);
+        color: var(--text-dark);
+        line-height: 1.7;
+        padding: 20px;
+      }
+
+      /*
+         * =============================================
+         * Tata Letak Utama
+         * =============================================
+         */
+      .container {
+        max-width: 850px;
+        margin: 20px auto;
+        background: var(--background-card);
+        border-radius: 15px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+      }
+
+      .header {
+        background-color: var(--primary-color);
+        color: var(--background-card);
+        padding: 40px 20px;
+        text-align: center;
+        border-bottom: 5px solid var(--secondary-color);
+      }
+
+      .header h1 {
+        font-family: var(--font-heading);
+        font-size: 2.8em;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        font-size: 1.1em;
+        opacity: 0.9;
+      }
+
+      /*
+         * =============================================
+         * Komponen Akordion Interaktif
+         * =============================================
+         */
+      .accordion {
+        font-family: var(--font-body);
+        background-color: transparent;
+        color: var(--primary-color);
+        cursor: pointer;
+        padding: 20px 25px;
+        width: 100%;
+        border: none;
+        border-top: 1px solid var(--border-color);
+        text-align: left;
+        outline: none;
+        font-size: 1.25em;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .accordion:hover {
+        background-color: #f1f3f5;
+      }
+
+      .accordion .icon {
+        font-size: 1.2em;
+        transition: transform 0.3s ease-in-out;
+        color: var(--secondary-color);
+      }
+
+      .accordion.active .icon {
+        transform: rotate(45deg);
+      }
+
+      .panel {
+        padding: 0 25px;
+        background-color: var(--background-card);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+      }
+
+      .panel-content {
+        padding: 25px 0;
+        border-top: 2px solid var(--secondary-color);
+        margin-top: -1px; /* Menyelaraskan dengan border akordion */
+      }
+
+      .panel ul {
+        list-style: none;
+      }
+
+      .panel li {
+        padding: 12px;
+        margin-bottom: 10px;
+        border-left: 4px solid var(--secondary-color);
+        background-color: #fafafa;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .panel h3 {
+        font-family: var(--font-heading);
+        color: var(--primary-color);
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      blockquote {
+        font-family: var(--font-heading);
+        font-style: italic;
+        color: var(--text-light);
+        border-left: 4px solid var(--primary-color);
+        padding-left: 20px;
+        margin: 25px 0;
+        font-size: 1.1em;
+      }
+
+      /*
+         * =============================================
+         * Footer
+         * =============================================
+         */
+      .footer {
+        text-align: center;
+        padding: 25px;
+        background-color: #f1f3f5;
+        color: var(--text-light);
+        font-style: italic;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .footer .credit {
+        margin-top: 15px;
+        font-size: 0.9em;
+        font-style: normal;
+      }
+
+      .footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+      /*
+         * =============================================
+         * Media Query untuk Perangkat Seluler
+         * =============================================
+         */
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        .header h1 {
+          font-size: 2em;
+        }
+
+        .accordion {
+          font-size: 1.1em;
+          padding: 18px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Mengenal Sosok Teladan, Rasulullah ﷺ</h1>
+        <p>Memahami detail kehidupan beliau sebagai tanda cinta kita.</p>
+      </header>
+
+      <main>
+        <button class="accordion">
+          <span>Biodata Singkat</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="panel">
+          <div class="panel-content">
+            <ul>
+              <li>
+                <strong>Nama Lengkap:</strong> Muhammad bin Abdullah bin Abdul
+                Muthalib bin Hasyim
+              </li>
+              <li>
+                <strong>Tanggal Lahir:</strong> Senin 12 Rabi'ul Awwal, Tahun
+                Gajah (± 20 April 571 M)
+              </li>
+              <li><strong>Tempat Lahir:</strong> Makkah Al-Mukarramah</li>
+              <li>
+                <strong>Ayah:</strong> Abdullah bin Abdul Muthalib (Wafat
+                sebelum kelahiran)
+              </li>
+              <li><strong>Ibu:</strong> Aminah binti Wahab</li>
+              <li><strong>Pengasuh:</strong> Ummu Aiman (Barakah)</li>
+              <li>
+                <strong>Ibu Susu:</strong> Tsuwaibah Al-Aslamiyah & Halimah
+                As-Sa'diyah
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="accordion">
+          <span>Keluarga Tercinta: Istri dan Anak</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="panel">
+          <div class="panel-content">
+            <h3>Istri-Istri Beliau</h3>
+            <ul>
+              <li>Khadijah binti Khuwalid</li>
+              <li>Saudah binti Zama'ah</li>
+              <li>Aisyah binti Abu Bakar</li>
+              <li>Hafshah binti Umar</li>
+              <li>Zainab binti Khuzaimah</li>
+              <li>Ummu Salamah (Hindun binti Abu Umayyah)</li>
+              <li>Zainab binti Jahsy</li>
+              <li>Juwariyah binti Al Harits</li>
+              <li>Ummu Habibah (Ramlah binti Abu Sufyan)</li>
+              <li>Shafiyyah binti Huyayy</li>
+              <li>Maimunah binti Al-Harits</li>
+            </ul>
+
+            <h3>Putra-Putri Beliau</h3>
+            <ul>
+              <li>Qasim</li>
+              <li>Abdullah</li>
+              <li>Ibrahim</li>
+              <li>Zainab</li>
+              <li>Ruqayyah</li>
+              <li>Ummu Kultsum</li>
+              <li>Fatimah Az-Zahra</li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="accordion">
+          <span>Jejak Langkah Kehidupan (Peristiwa Penting)</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="panel">
+          <div class="panel-content">
+            <ul>
+              <li>
+                <strong>Usia 5:</strong> Peristiwa Syaqqush-Shadr (pembelahan
+                dada).
+              </li>
+              <li>
+                <strong>Usia 6:</strong> Ibunda Aminah wafat, dirawat oleh
+                kakeknya, Abdul Muthalib.
+              </li>
+              <li>
+                <strong>Usia 8:</strong> Kakeknya wafat, dirawat oleh pamannya,
+                Abu Thalib.
+              </li>
+              <li><strong>Usia 9:</strong> Menggembala kambing di Makkah.</li>
+              <li>
+                <strong>Usia 12:</strong> Safar dagang pertama ke Syam bersama
+                Abu Thalib.
+              </li>
+              <li><strong>Usia 14:</strong> Menghadiri Perang Fijar.</li>
+              <li>
+                <strong>Usia 20:</strong> Menyaksikan perjanjian Al-Fudhul
+                (membela yang terzalimi).
+              </li>
+              <li>
+                <strong>Usia 25:</strong> Safar dagang kedua membawa dagangan
+                Khadijah, lalu menikahinya.
+              </li>
+              <li>
+                <strong>Usia 35:</strong> Menjadi penengah dalam peletakan Hajar
+                Aswad saat renovasi Ka'bah.
+              </li>
+              <li>
+                <strong>Usia 40:</strong> Menerima wahyu pertama di Gua Hira dan
+                diangkat menjadi Rasul.
+              </li>
+              <li>
+                <strong>Usia 53:</strong> Hijrah ke Madinah bersama Abu Bakar.
+              </li>
+              <li>
+                <strong>Usia 63:</strong> Wafat di Madinah pada Senin, 12
+                Rabi'ul Awwal 11 H.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="accordion">
+          <span>Gambaran Fisik Rasulullah ﷺ</span>
+          <span class="icon">+</span>
+        </button>
+        <div class="panel">
+          <div class="panel-content">
+            <h3>Gambaran dari Para Sahabat</h3>
+            <blockquote>
+              "Aku belum pernah melihat lelaki segagah Rasulullah."
+            </blockquote>
+            <blockquote>
+              "Seandainya kamu melihat baginda, seolah melihat matahari terbit."
+            </blockquote>
+            <blockquote>
+              "Rasulullah lebih indah dari sinar rembulan. Apabila bahagia,
+              wajahnya bercahaya laksana bulan purnama."
+            </blockquote>
+
+            <h3>Ciri-Ciri Fisik Beliau</h3>
+            <ul>
+              <li>Wajah bercahaya, kulit putih kemerah-merahan.</li>
+              <li>Hidung agak mancung.</li>
+              <li>Gigi kecil dan tersusun rapi.</li>
+              <li>Janggut tebal dan penuh.</li>
+              <li>Leher jenjang seputih perak.</li>
+              <li>Kepala dan bahu proporsional dan indah.</li>
+              <li>Rambut hitam lebat, sedikit ikal dan selalu rapi.</li>
+              <li>Dada bidang, rata dengan perut.</li>
+              <li>Telapak tangan lembut seperti sutra.</li>
+              <li>Perawakan kokoh dan seimbang.</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>
+          Mari perbanyak Shalawat. Semoga kita semua beroleh syafaat beliau dan
+          diberi kesempatan berziarah ke makamnya. Aamiin.
+        </p>
+        <p class="credit">
+          Created by
+          <a
+            href="https://aazeenkirani.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Muhammad Imron</a
+          >
+          &copy; <span id="current-year"></span>
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Script untuk fungsionalitas akordion
+      const accordions = document.querySelectorAll(".accordion");
+
+      accordions.forEach((accordion) => {
+        accordion.addEventListener("click", function () {
+          // Toggle kelas 'active' pada tombol yang diklik
+          this.classList.toggle("active");
+
+          const icon = this.querySelector(".icon");
+          if (this.classList.contains("active")) {
+            icon.textContent = "-";
+          } else {
+            icon.textContent = "+";
+          }
+
+          // Ambil panel terkait
+          const panel = this.nextElementSibling;
+
+          // Toggle tinggi maksimal panel
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      });
+
+      // Script untuk tahun berjalan di footer
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
