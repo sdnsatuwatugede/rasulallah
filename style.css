@@ -64,17 +64,20 @@ ul li strong {
 }
 
 .interactive-buttons {
-  text-align: center;
-  margin-top: 40px;
+  display: flex; /* Mengaktifkan Flexbox */
+  flex-wrap: wrap; /* Izinkan tombol pindah ke baris baru jika tidak muat */
+  justify-content: center; /* Posisi tombol di tengah container */
+  gap: 10px; /* Jarak antar tombol, lebih baik dari margin */
 }
 
 .btn {
   text-decoration: none;
   color: #b39a7b;
   border: 2px solid #b39a7b;
-  padding: 12px 25px;
+  padding: 12px 30px;
   border-radius: 50px;
-  margin: 0 10px;
+  /* margin: 0 10px; Dihapus atau diubah */
+  margin: 5px 0; /* Beri sedikit margin vertikal jika perlu */
   font-weight: bold;
   background-color: transparent;
   transition: all 0.4s ease;
